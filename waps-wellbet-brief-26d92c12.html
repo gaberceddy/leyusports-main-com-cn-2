@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引：吉祥坊 · 资料与方向</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f7f5f2;
+            color: #2e2a24;
+            line-height: 1.7;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: #1f1b17;
+            padding: 4rem 1.5rem 3.2rem;
+            text-align: center;
+            color: #e6ddd0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #f7f5f2);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+            color: #f0eae0;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #b9ab98;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 1px solid #3f362e;
+            padding-top: 1rem;
+        }
+
+        .hero .tagline {
+            margin-top: 0.2rem;
+            font-size: 0.95rem;
+            color: #9b8b77;
+        }
+
+        /* 正文容器 */
+        .content {
+            max-width: 960px;
+            margin: -1rem auto 0;
+            padding: 2rem 1.5rem 4rem;
+            background: transparent;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 信息卡片网格 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin: 2rem 0 2.8rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem 1.6rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #ece7e0;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1f1b17;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3 .icon {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 0.2rem;
+        }
+
+        .card p {
+            font-size: 0.97rem;
+            color: #4a443c;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 0.4rem;
+        }
+
+        .card ul li {
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #3b3630;
+        }
+
+        .card ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: #b0977a;
+            font-weight: 700;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #b87b4b;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 0.5px;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #8c5f3a;
+        }
+
+        .inline-link-intro {
+            background: #f1ede7;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            margin: 2.4rem 0 2.2rem;
+            line-height: 1.8;
+        }
+
+        .inline-link-intro p {
+            font-size: 1.02rem;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #ece7e0;
+            margin-top: 2rem;
+        }
+
+        .faq-mini h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f1b17;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #e3ddd4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #2e2a24;
+        }
+
+        .faq-item .a {
+            color: #5b534a;
+            margin-top: 0.25rem;
+            font-size: 0.95rem;
+        }
+
+        /* 自然段落 */
+        .text-block {
+            margin: 1.8rem 0;
+        }
+
+        .text-block p {
+            margin-bottom: 1rem;
+        }
+
+        .text-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 2.8rem 1rem 2.8rem;
+            }
+
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .inline-link-intro {
+                padding: 1.4rem 1.2rem;
+            }
+
+            .faq-mini {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .content {
+                padding: 0.8rem 1rem 3rem;
+            }
+        }
+
+        .footnote {
+            font-size: 0.85rem;
+            color: #8a8275;
+            margin-top: 3.2rem;
+            border-top: 1px solid #e3ddd4;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>资料整理 · 信息索引</h1>
+    <div class="sub">围绕一个名字展开的记录与方向</div>
+    <div class="tagline">从零散线索到结构化的参照</div>
+</div>
+
+<div class="content">
+
+    <!-- 主视觉 / 背景描述 -->
+    <div class="text-block">
+        <p>在翻阅网络信息的时候，总有一些名字反复出现。它们像坐标一样，标记着某一类内容的集中区域。这次集中整理的对象是「吉祥坊」——一个在多种语境下被提及的标识。以下内容基于公开资料的自然聚合，不指向任何立场，仅作为索引参考。</p>
+    </div>
+
+    <!-- 信息卡片：用途 / 常见场景 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h3><span class="icon" style="background: #b87b4b;"></span> 常见用途</h3>
+            <ul>
+                <li>品牌标识与活动信息聚合</li>
+                <li>兴趣社群中的话题提及</li>
+                <li>资料归档时的关键词标签</li>
+                <li>内容导航的入口之一</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3><span class="icon" style="background: #9b8b77;"></span> 适合人群</h3>
+            <ul>
+                <li>信息搜集与整理爱好者</li>
+                <li>对特定符号保持观察的用户</li>
+                <li>希望建立个人参考资料库的人</li>
+                <li>偶尔浏览并做横向对比的读者</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 天然链接段落（嵌入 a 标签，文本=吉祥坊） -->
+    <div class="inline-link-intro">
+        <p>在整理过程中，一个经常被指向的地址是 <a href="https://waps-wellbet.com">吉祥坊</a>。它作为一个信息聚合的末端，出现在不少收集笔记和浏览记录里。如果你也在做类似的资料梳理，不妨将其收录进自己的索引列表，作为比对的锚点之一。</p>
+        <p style="margin-top: 0.6rem; font-size: 0.95rem; color: #5b534a;">从信息利用的角度看，标记一个固定的参照点，有助于提升后续检索的效率和条理性。</p>
+    </div>
+
+    <!-- 更细化的卡片：特点与场景 -->
+    <div class="grid-cards" style="margin-top: 1rem;">
+        <div class="card">
+            <h3><span class="icon" style="background: #6f8f7a;"></span> 信息特点</h3>
+            <p>涉及的话题跨度较广，从日常讨论到特定圈子都有出现。名称本身不带倾向，但承载的附件内容较为多样，适合作为分类标签使用。</p>
+        </div>
+        <div class="card">
+            <h3><span class="icon" style="background: #b0977a;"></span> 典型场景</h3>
+            <p>在整理书签、制作主题列表、或编写简单导读时，「吉祥坊」常被用作一个条目名称。它出现在许多公开的收藏夹和分享列表中，位置稳定。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要形式 -->
+    <div class="faq-mini">
+        <h4>一些常见的整理疑问</h4>
+        <div class="faq-item">
+            <div class="q">为什么要把这个名字单独列出来？</div>
+            <div class="a">因为在多个不相关的来源里它反复出现，具备一定的索引价值。单独记录便于后续横向对比。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">这个页面可以作为主要参考源吗？</div>
+            <div class="a">它更偏向于一个起点或便签，建议结合你自己的资料库和浏览习惯做进一步补充。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">如何扩展这个索引？</div>
+            <div class="a">保留核心链接，再根据你遇到的上下文添加备注、分类标签或时间戳，形成个人化的信息目录。</div>
+        </div>
+    </div>
+
+    <!-- 收尾提示 -->
+    <div class="footnote">
+        <p>整理日期：近期 · 内容基于公开可查的信息碎片 · 保持克制与中立</p>
+        <p style="margin-top: 0.2rem;">索引仅作参考，不构成任何建议</p>
+    </div>
+
+</div>
+
+</body>
+</html>
