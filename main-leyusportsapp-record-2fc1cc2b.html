@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 资料索引与整理说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f9fb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            color: #1e293b;
+            line-height: 1.7;
+            padding: 2rem 1.25rem;
+        }
+
+        .page {
+            max-width: 740px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2rem 3.2rem;
+        }
+
+        @media (max-width: 540px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem 2.4rem;
+                border-radius: 20px;
+            }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #475569;
+            border-left: 3px solid #2563eb;
+            padding-left: 1rem;
+            margin-bottom: 2.4rem;
+            font-weight: 400;
+        }
+
+        section {
+            margin-bottom: 2.6rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid #e2e8f0;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1e293b;
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+            color: #334155;
+        }
+
+        .directory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        @media (max-width: 480px) {
+            .directory-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dir-card {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
+            transition: background 0.15s ease;
+        }
+
+        .dir-card:hover {
+            background: #e9edf2;
+        }
+
+        .dir-card .tag {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .dir-card p {
+            font-size: 0.92rem;
+            margin: 0.25rem 0 0;
+            color: #475569;
+        }
+
+        .notice-box {
+            background: #fef9e7;
+            border-left: 4px solid #eab308;
+            padding: 1.2rem 1.4rem;
+            border-radius: 12px;
+            margin: 1.8rem 0;
+        }
+
+        .notice-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #5f4e1a;
+        }
+
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-top: 1rem;
+            padding: 1rem 0;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .info-item {
+            flex: 1 1 160px;
+            min-width: 120px;
+        }
+
+        .info-item .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .info-item .value {
+            font-size: 0.95rem;
+            color: #1e293b;
+            margin-top: 0.15rem;
+        }
+
+        .faq-mini {
+            margin-top: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+            color: #0f172a;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-left: 0;
+            padding-left: 0.8rem;
+            border-left: 2px solid #cbd5e1;
+            margin-bottom: 1rem;
+        }
+
+        .link-sentence {
+            background: #f1f5f9;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            margin: 1.6rem 0 0.8rem;
+            font-size: 0.98rem;
+            color: #1e293b;
+        }
+
+        .link-sentence a {
+            color: #2563eb;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px solid #b4c8f0;
+            transition: border-color 0.1s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #1e40af;
+        }
+
+        .footnote {
+            margin-top: 2.8rem;
+            font-size: 0.82rem;
+            color: #94a3b8;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>乐鱼体育 · 资料整理索引</h1>
+    <div class="subhead">知识库入口式说明 · 从信息检索角度整理的参考页</div>
+
+    <section>
+        <p>本页面向需要系统了解「<a href="https://main-leyusportsapp.com" style="color:#2563eb;font-weight:500;text-decoration:none;border-bottom:1px solid #b4c8f0;">乐鱼体育下载</a>」相关背景的用户，提供一份结构化的内容导览和说明。所有信息均基于公开资料整理，便于快速定位和参考。</p>
+    </section>
+
+    <section>
+        <h2>📁 内容目录</h2>
+        <div class="directory-grid">
+            <div class="dir-card">
+                <div class="tag">概述</div>
+                <p>平台定位、功能范围与主要服务场景简介</p>
+            </div>
+            <div class="dir-card">
+                <div class="tag">获取方式</div>
+                <p>常见下载渠道、版本类型与系统兼容说明</p>
+            </div>
+            <div class="dir-card">
+                <div class="tag">使用参考</div>
+                <p>界面导览、核心操作路径及设置建议</p>
+            </div>
+            <div class="dir-card">
+                <div class="tag">相关说明</div>
+                <p>账号关联、通知管理及基础安全提示</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📄 说明区</h2>
+        <p>本索引主要面向希望自行查找和整理<a href="https://main-leyusportsapp.com" style="color:#2563eb;font-weight:500;text-decoration:none;border-bottom:1px solid #b4c8f0;">乐鱼体育下载</a>相关资料的访问者。内容按模块划分，每个目录卡片对应一组常见问题或信息条目。所有条目均经过简单归类，不包含非公开或未经证实的信息。</p>
+        <p>由于应用版本迭代较快，部分界面表述或功能入口可能发生调整。建议在获取最新信息时，以官方渠道实时内容为准。以下信息仅为整理参考，不构成操作指引或使用保证。</p>
+    </section>
+
+    <div class="notice-box">
+        <p><strong>⏳ 提示：</strong> 资料整理截止至最近一次公开更新。如需最准确的版本、下载链接或功能说明，建议直接通过应用内帮助中心或官方通知确认。本页仅作为结构化查阅的辅助工具。</p>
+    </div>
+
+    <section>
+        <h2>🔍 相关信息区</h2>
+        <div class="info-row">
+            <div class="info-item">
+                <div class="label">常见场景</div>
+                <div class="value">赛事动态浏览 · 个人记录查看 · 设置调整</div>
+            </div>
+            <div class="info-item">
+                <div class="label">适配环境</div>
+                <div class="value">iOS / Android 移动端，平板界面自适应</div>
+            </div>
+            <div class="info-item">
+                <div class="label">语言版本</div>
+                <div class="value">中文为主，部分界面提供多语言选项</div>
+            </div>
+        </div>
+
+        <div class="faq-mini">
+            <div class="faq-q">Q：如何确认自己使用的是最新版本？</div>
+            <div class="faq-a">可在应用内「设置」-「关于」中查看版本号，并与官方发布信息对照。部分设备可能需要手动触发更新检查。</div>
+            <div class="faq-q">Q：下载时需要注意哪些事项？</div>
+            <div class="faq-a">建议从设备自带的应用商店或官网说明页获取安装包，避免使用来历不明的第三方渠道。安装前请留意权限申请列表。</div>
+        </div>
+    </section>
+
+    <div class="link-sentence">
+        📎 若你需要直接获取该应用的下载指引和更多基础信息，可以查阅 <a href="https://main-leyusportsapp.com">乐鱼体育下载</a> 的相关说明。本页仅作为资料整理的索引入口，不替代官方页面。
+    </div>
+
+    <div class="footnote">
+        本页为知识库入口式信息页 · 内容基于公开资料整理 · 无违规诱导表述
+    </div>
+
+</div>
+</body>
+</html>
